@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/allstyles/home.css">
+    <title>slook</title>
+</head>
+<body>
+    
+    <header >
+        <div class="intro">
+            <img class="img-fluid w-100 h-50"  src="images/header.jpg">
+            <div class=" head text-center ">
+                <h1>Hella</h1>
+                <h6>Stay curious.</h6>
+                <p>Discover stories,thinking,and expertise from writers on any topic</p>
+                <hr class="w-25 mx-auto">
+            </div>
+        </div>
+    
+        <nav class="navbar navbar-expand-lg bg-body-tertiary  py-3 " >
+  <div class="container-fluid">
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#" style="font-weight: 700;">SlooK</a>
+        </li>
+        
+          <li class="nav-item">
+          <a class="nav-link" href="#">Stories</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Publications</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Trending</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="#">Topics</a>
+        </li>
+
+
+        
+        
+      </ul>
+      
+      <form class="d-flex pr-4 " role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-primary" type="submit">Search</button>
+      </form>
+
+  
+<div class="btn-group mx-4 my-2">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+    {{userDetails.name}}
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Somet</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" onclick="logout()">Logout</a></li>
+  </ul>
+</div>
+
+      
+    </div>
+  </div>
+
+</nav>
+    </header>
+ 
+ <section class="featured container my-5 ">
+    <div class="row ">
+        <div class="one col-lg-4 col-md-6 col-12 mb-5">
+            <img class="img-fluid" src="images/X.jpg">
+            <div class="text w-75 h-50 text-light p-3">
+                <p>Musk vs Mark</p>
+                <h4>Elon Musk vs Mark zuckerberg fight will be streamed on X, according to Musk</h4>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+       <div class="one col-lg-4 col-md-6 col-12 mb-5">
+            <img class="img-fluid" src="images/asia.jpg">
+            <div class="text w-75 h-50 text-light p-3">
+                <p>UberAUTO</p>
+                <h4>Uber Suspends Its Auto-Rickshaw Service Uber always keeps trying for new ways to</h4>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+       <div class="one col-lg-4 col-md-6 col-12 mb-5">
+            <img class="img-fluid" src="images/flag.jpg">
+            <div class="text w-75 h-50 text-light p-3">
+                <p>2023</p>
+                <h4>Happy 76th Independence Day, India!</h4>
+                <a href="#">Read more</a>
+            </div>
+        </div>
+
+   <hr class="border border-primary border-3 opacity-75 ">
+
+    </div>
+
+
+ </section>
+
+ 
+
+ <section class="blog container my-5" >
+    <div class="row">
+        <div class="post col-lgl-8 col-md-8 col-12">
+            <div class="row">
+              
+{{#each data}}
+            <div class="post1 post col-lg-6 col-md-6 col-12 pb-4">
+              <a href="/detailedView?id={{this._id}}" class="view">
+                <img class="img-fluid pb-3" src="/uploads/{{this.images.[0].filename}}" style="max-height: 400px;">
+                <h3>{{this.heading}}</h3>
+                <p>The Tech side of startups can sometimes be very fluid and contain a lot of unknowns. What tech stack to use?</p>
+                <a href="/detailedView">Read more</a>
+                </a>
+            </div>
+{{/each}}
+            
+         </div>
+       
+        </div>
+        <div class="sidebar col-lg-4 col-md-4 col-12">
+
+        
+ 
+          <div class="side2 ">
+                <h4>Made for you</h4>
+                <hr class="w-50">
+             <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/remote.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>How to Make Money Online: 38 Remote Jobs in 2023 — UPDATED</h3>
+                <p>Every year it’s becoming easier to work from home <a>Read more...</a></p>
+                </div><div class="selectors mb-3 mx-2">
+    <button type="button" class="btn btn-light text-secondary ">For You</button>
+    <button type="button" class="btn btn-light text-secondary ">Follow</button>  
+    <button type="button" class="btn btn-light text-secondary ">Newsletter</button>
+    <button type="button" class="btn btn-light text-secondary ">Healt</button>
+    <button type="button" class="btn btn-light text-secondary ">Machine Learning</button>
+    <button type="button" class="btn btn-light text-secondary ">Startup</button>
+    <button type="button" class="btn btn-light text-secondary ">Data Science</button>
+     <button type="button" class="btn btn-light text-secondary ">JavaScript</button>
+    <button type="button" class="btn btn-light text-secondary ">Jobs</button>  
+    <button type="button" class="btn btn-light text-secondary ">Software Development</button>
+    <button type="button" class="btn btn-light text-secondary ">Design</button>
+    <button type="button" class="btn btn-light text-secondary ">Technology</button>
+    <button type="button" class="btn btn-light text-secondary ">Productivity</button>
+    <button type="button" class="btn btn-light text-secondary ">Sort Readings</button>
+
+
+
+ </div>
+
+
+ </div>
+             </div>
+            
+             <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/ai-generated.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>Humanoid robot: a servant or a clone</h3>
+                <p>If you’re anything like me, the thought of projecting your consciousness into a robot will send a happy shiver of “what if” down your spine <a>Read more...</a></p>
+                </div>
+             </div>
+
+              <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/ai.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>How to Generate Realistic Images and Art with the Help of AI (Tutorial)</h3>
+                <p>We all know that a picture is worth a thousand words. And, <a>Read more...</a></p>
+                </div>
+             </div>
+
+              <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/money.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>7 things people who are good with money never buy</h3>
+                <p>People who are good with money look for quality over quantity, and don’t make purchases that will derail their money goals later <a>Read more...</a></p>
+                </div>
+             </div>
+
+              <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/watch.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>If You Want to Increase Your Success, Handcraft Your Content Like a Rolex</h3>
+                <p>Make your stories remarkable by providing high-quality articles <a>Read more...</a></p>
+                </div>
+             </div>
+
+              <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/pill.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>On Taking, and Not Taking, the Pills That Keep Me Alive</h3>
+                <p>I was going to write about going off antidepressants. That didn’t happen <a>Read more...</a></p>
+                </div>
+             </div>
+
+              <div class="row">
+               <div class="sideimg  col-lg-4 col-md-4 col-4">
+                 <img class="img-fluid" src="images/wiz.jpg">
+               </div>
+               <div class="sidetext col-lg-8 col-md-8 col-8">
+                <h3>The High Road: Exploring the Dynamic Relationship Between Wiz Khalifa and Snoop Dogg</h3>
+
+                <p>two popular rappers who have made a name for themselves in the hip-hop industry <a>Read more...</a></p>
+                </div>
+             </div>
+
+             
+
+
+             <div class="side3">
+                <h4>Intresting</h4>
+                <hr class="w-25">
+                <div class="one">
+                    <img class="img-fluid" src="images/shope.jpg">
+                    <div class="text text-center">
+                      <h4>laptop stand</h4>
+                        <button type="button" class="btn btn-primary">Shope Now</button>
+                    
+                        <button type="button" class="btn btn-info">See More</button>
+                     </div>
+                </div>
+
+                <div class="selectors mb-3 mx-2 mt-5">
+    <button type="button" class="btn btn-light text-secondary ">For You</button>
+    <button type="button" class="btn btn-light text-secondary ">Follow</button>  
+    <button type="button" class="btn btn-light text-secondary ">Newsletter</button>
+    <button type="button" class="btn btn-light text-secondary ">Healt</button>
+    <button type="button" class="btn btn-light text-secondary ">Machine Learning</button>
+    <button type="button" class="btn btn-light text-secondary ">Startup</button>
+    <button type="button" class="btn btn-light text-secondary ">Data Science</button>
+    <button type="button" class="btn btn-light text-secondary ">JavaScript</button>
+    <button type="button" class="btn btn-light text-secondary ">Jobs</button>  
+    <button type="button" class="btn btn-light text-secondary ">Software Development</button>
+    <button type="button" class="btn btn-light text-secondary ">Design</button>
+    <button type="button" class="btn btn-light text-secondary ">Technology</button>
+    <button type="button" class="btn btn-light text-secondary ">Productivity</button>
+    <button type="button" class="btn btn-light text-secondary ">Sort Readings</button>
+
+
+
+ </div>
+
+
+             </div>
+
+
+
+
+
+    
+           </div>
+        </div>
+
+
+
+        </div>
+    </div>
+ </section>
+ <div class="selectors mb-3 mx-2">
+    <button type="button" class="btn btn-light text-secondary ">For You</button>
+    <button type="button" class="btn btn-light text-secondary ">Follow</button>  
+    <button type="button" class="btn btn-light text-secondary ">Newsletter</button>
+    <button type="button" class="btn btn-light text-secondary ">Healt</button>
+    <button type="button" class="btn btn-light text-secondary ">Machine Learning</button>
+    <button type="button" class="btn btn-light text-secondary ">Startup</button>
+    <button type="button" class="btn btn-light text-secondary ">Data Science</button>
+    <button type="button" class="btn btn-light text-secondary ">JavaScript</button>
+    <button type="button" class="btn btn-light text-secondary ">Jobs</button>  
+    <button type="button" class="btn btn-light text-secondary ">Software Development</button>
+    <button type="button" class="btn btn-light text-secondary ">Design</button>
+    <button type="button" class="btn btn-light text-secondary ">Technology</button>
+    <button type="button" class="btn btn-light text-secondary ">Productivity</button>
+    <button type="button" class="btn btn-light text-secondary ">Sort Readings</button>
+
+
+
+ </div>
+
+ <!-- Footer -->
+<footer class="bg-light text-center ">
+  <!-- Grid container -->
+  <div class="container p-4">
+
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998" href="#!" role="button"><i class="fa-brands fa-facebook"></i></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee" href="#!" role="button"><i class="fa-brands fa-twitter"></i></a>
+
+      <!-- Google -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39" href="#!" role="button"><i class="fa-brands fa-google"></i></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac" href="#!" role="button"><i class="fa-brands fa-instagram"></i></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca" href="#!" role="button"><i class="fa-brands fa-linkedin-in"></i></a>
+      <!-- Github -->
+      <a class="btn btn-primary btn-floating m-1" style="background-color: #333333" href="#!" role="button"><i class="fa-brands fa-github"></i></a>
+    </section>
+    <!-- Section: Social media -->
+
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form5Example2" class="form-control" />
+              <label class="form-label" for="form5Example2">Email address</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
+        distinctio earum repellat quaerat voluptatibus placeat nam,
+        commodi optio pariatur est quia magnam eum harum corrupti dicta,
+        aliquam sequi voluptate quas.
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">ABOUT</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-dark">About Us</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Swag store</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Community Discussions</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">OpenCollective</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">sponsors</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-dark">Cloudflare</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Algolia</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">DigitalOcean</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">StatusPage</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">opportunities</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-dark">Search job</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Documents</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Review</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Status</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a href="#!" class="text-dark">Status Page</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Status on Twitter</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Collective</a>
+            </li>
+
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+    © 2020 Copyright:
+    <a class="text-dark" href="https://mdbootstrap.com/">MDSlook.com</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+<script src="/signup.js"></script>
+
+</body>
+</html>

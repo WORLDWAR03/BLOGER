@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="/allstyles/signup.css">
+     
+    <title>signup</title>
+
+</head>
+<body>
+    {{!-- main container --}}
+
+
+  <div class="signup template d-flex justify-content-center align-items-center min-vh-100 bg-primary">
+
+
+    <div class="container col-lg-4  p-5 rounded-4 bg-white ">
+        <form  class="col s6" id="myForm">
+
+           <h3 class="text-center">Sign Up</h3>
+           <div class="input-field mb-2">
+               <label name="firstname">First Name</label>
+               <input type="text" placeholder="Enter First Name" class="form-control" id="firstName" onblur="validateFirstName()" />
+               <span class="helper-text"></span>
+           </div>
+           <div class="input-field col s6 mb-2">
+               <label name="lastname">Last Name</label>
+               <input type="text" placeholder="Enter Last Name" class="form-control" id="lastName" onblur="validateLastName()"/>
+                <span class="helper-text"></span>
+           </div>
+           <div class="inputt-feild col s12 mb-2">
+               <label name="email">Email</label>
+               <input type="email" placeholder="Enter Email" class="form-control " id="email" onblur="validateEmail()"/>
+                <span class="helper-text"></span>
+           </div>
+           <div class="input-field col s6 mb-2">
+               <label name="password">Password1</label>
+               <input type="password" placeholder="Enter Password" class="form-control" id="password" onblur="validatePassword()"/>
+                <span class="helper-text"></span>
+
+           </div>
+           <div class="input-field col s6 mb-2">
+               <label name="password">Password2</label>
+               <input type="password" placeholder="ConfirmPassword" class="form-control"  id="confirmPassword" onblur="validateConfirmPassword()"/>
+               <span class="helper-text"></span>
+           </div>
+
+           <div class="d-grid">
+            <button class="btn btn-primary" type="submit" value="submit" onclick="doSignup()" >Sign Up</button>
+           </div>
+
+           <p class="text-end mt-2">
+            Already Registerd<a href="/" class="ms-2">Log in</a>
+           </p>
+
+        
+           
+
+        
+        
+
+
+        </form>
+
+
+    </div>
+  </div>
+
+
+<script   src="/signup.js"></script>
+   
+</body>
+
+</html>
