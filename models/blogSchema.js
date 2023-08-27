@@ -6,6 +6,13 @@ const blogSchema = mongoose.Schema({
         required:true,
         default:"no heading"
     },
+    createdBy:{
+        type:mongoose.Types.ObjectId,
+        ref:"users"
+
+    }
+
+    ,
     category:{
         type:String,
         required:true,
@@ -17,6 +24,13 @@ const blogSchema = mongoose.Schema({
         required: true
 
     },
+    discription:{
+        type:String,
+        required:true,
+        
+    },
+
+
     content:{
         type:String,
         required:true,

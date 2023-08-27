@@ -4,7 +4,7 @@ const path =require('path');
 const hbs =require('hbs');
 const connectDB=require('./config/dbConfig')
 const cookieParser=require('cookie-parser')
-
+require('dotenv').config()
 connectDB()
 
 const user =require('./routes/user');
@@ -28,4 +28,5 @@ app.use('/', user)
 app.use('/admin',admin)
 
 
-app.listen(3000);
+
+app.listen(process.env.PORT);

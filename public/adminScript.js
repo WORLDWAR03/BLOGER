@@ -1,6 +1,10 @@
 
 
 
+//SELECTED IMAGE VIEW
+
+
+
 
 
 
@@ -24,7 +28,7 @@ const showImages =()=>{
     
    
     
-    
+    //ADMIN LOGIN
 
     function adminLogin(){
       let loginData={}
@@ -49,3 +53,62 @@ const showImages =()=>{
         }
       })
   }
+
+  //ADMIN LOGOUT
+
+  const logout=()=>{
+    localStorage.clear()
+    sessionStorage.clear()
+    location.assign('/logout')
+
+}
+
+//DELETE BLOG
+
+
+function deletePosts(postId){
+
+ fetch('/admin/deletePost',{
+  method:'delete',
+  headers:{
+    'Content-Type':'application/json'
+  },
+
+  body:JSON.stringify({postId:postId})
+ })
+ .then((res)=>res.json())
+ .then((response)=>{
+  if(response.delete){
+    location.reload()
+  }else{
+    alert('someting went wrong')
+  }
+ })
+}
+
+
+function deleteUser(userId){
+  fetch('/admin/deleteUser',{
+    method:'delete',
+    headers:{
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify({userId:userId})
+  }).then((res)=>res.json())
+  .then((respose)=>{
+    if(respose.delete){
+      location.reload()
+    }else{
+      alert('something went wrong')
+    }
+  })
+}
+
+
+
+
+
+
+
+
+  

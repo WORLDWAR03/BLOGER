@@ -3,8 +3,10 @@ const getUserData =require('../helpers/helper')
 
 
 const userAuthentication=(req,res,next)=>{
+
+    
     if(req?.cookies?.userJwt){
-        const isLoggedin=jwt.verify(req.cookies.userJwt,'securitykey')
+        const isLoggedin=jwt.verify(req.cookies.userJwt,process.env.JWT_KEY)
         if(isLoggedin){
            const user= parseJwt(req.cookies.userJwt)
           getUserData(user.userId).then((response)=>{
@@ -30,6 +32,8 @@ const userAuthentication=(req,res,next)=>{
     }
 
 }
+
+
 
 module.exports=userAuthentication 
 

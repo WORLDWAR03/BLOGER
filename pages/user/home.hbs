@@ -21,6 +21,9 @@
                 <hr class="w-25 mx-auto">
             </div>
         </div>
+
+
+        {{!-- NAVBAR --}}
     
         <nav class="navbar navbar-expand-lg bg-body-tertiary  py-3 " >
   <div class="container-fluid">
@@ -31,41 +34,48 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="font-weight: 700;">SlooK</a>
-        </li>
-        
-          <li class="nav-item">
-          <a class="nav-link" href="#">Stories</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Publications</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Trending</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="#">Topics</a>
+          <a class="nav-link active" aria-current="page" href="/home" style="font-weight: 700;">SlooK</a>
         </li>
 
+          <li class="nav-item">
+          <a class="nav-link" href="/selectedView?id=Business">Business</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/selectedView?id=Technology ">Technology</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/selectedView?id=Trending">Trending</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/selectedView?id=Data Science">Data Science</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/selectedView?id=Health">Health</a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/selectedView?id=Culture">Culture</a>
+          </li>
+      
+      
 
         
         
       </ul>
       
       <form class="d-flex pr-4 " role="search">
+        <a href="/useruploads" class=" btn btn-light btn-floating m-1 me-2" ><i   class="fa-regular fa-pen-to-square w-75"></i></a>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-primary" type="submit">Search</button>
       </form>
 
   
-<div class="btn-group mx-4 my-2">
-  <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+<div class="btn-group mx-4 my-2 ">
+  <button type="button" class="btn btn-primary   dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
     {{userDetails.name}}
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Somet</a></li>
+    <li><a class="dropdown-item" href="/useruploads">Write</a></li>
+    <li><a class="dropdown-item" href="/accountInfo?id={{userDetails._id}}">Account</a></li>
     <li><hr class="dropdown-divider"></li>
     <li><a class="dropdown-item" onclick="logout()">Logout</a></li>
   </ul>
@@ -77,6 +87,8 @@
 
 </nav>
     </header>
+
+
  
  <section class="featured container my-5 ">
     <div class="row ">
@@ -85,7 +97,7 @@
             <div class="text w-75 h-50 text-light p-3">
                 <p>Musk vs Mark</p>
                 <h4>Elon Musk vs Mark zuckerberg fight will be streamed on X, according to Musk</h4>
-                <a href="#">Read more</a>
+                <a href="/selectedView?id=Business">Read more</a>
             </div>
         </div>
 
@@ -107,7 +119,7 @@
             </div>
         </div>
 
-   <hr class="border border-primary border-3 opacity-75 ">
+   <hr class="border border-primary  opacity-75 ">
 
     </div>
 
@@ -126,9 +138,9 @@
               <a href="/detailedView?id={{this._id}}" class="view">
                 <img class="img-fluid pb-3" src="/uploads/{{this.images.[0].filename}}" style="max-height: 400px;">
                 <h3>{{this.heading}}</h3>
-                <p>The Tech side of startups can sometimes be very fluid and contain a lot of unknowns. What tech stack to use?</p>
+                <p class="text-secondary">{{this.discription}}</p>
                 <a href="/detailedView">Read more</a>
-                </a>
+                </a> 
             </div>
 {{/each}}
             
@@ -150,20 +162,20 @@
                 <h3>How to Make Money Online: 38 Remote Jobs in 2023 — UPDATED</h3>
                 <p>Every year it’s becoming easier to work from home <a>Read more...</a></p>
                 </div><div class="selectors mb-3 mx-2">
-    <button type="button" class="btn btn-light text-secondary ">For You</button>
-    <button type="button" class="btn btn-light text-secondary ">Follow</button>  
-    <button type="button" class="btn btn-light text-secondary ">Newsletter</button>
-    <button type="button" class="btn btn-light text-secondary ">Healt</button>
-    <button type="button" class="btn btn-light text-secondary ">Machine Learning</button>
-    <button type="button" class="btn btn-light text-secondary ">Startup</button>
-    <button type="button" class="btn btn-light text-secondary ">Data Science</button>
-     <button type="button" class="btn btn-light text-secondary ">JavaScript</button>
-    <button type="button" class="btn btn-light text-secondary ">Jobs</button>  
-    <button type="button" class="btn btn-light text-secondary ">Software Development</button>
-    <button type="button" class="btn btn-light text-secondary ">Design</button>
-    <button type="button" class="btn btn-light text-secondary ">Technology</button>
-    <button type="button" class="btn btn-light text-secondary ">Productivity</button>
-    <button type="button" class="btn btn-light text-secondary ">Sort Readings</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">For You</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Follow</button>  
+    <button type="button" class="btn btn-light text-secondary  mb-2">Newsletter</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Healt</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Machine Learning</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Startup</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Data Science</button>
+     <button type="button" class="btn btn-light text-secondary mb-2 ">JavaScript</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Jobs</button>  
+    <button type="button" class="btn btn-light text-secondary  mb-2">Software Development</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Design</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Technology</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Productivity</button>
+    <button type="button" class="btn btn-light text-secondary  mb-2">Sort Readings</button>
 
 
 
@@ -237,7 +249,7 @@
              
 
 
-             <div class="side3">
+     <div class="side3">
                 <h4>Intresting</h4>
                 <hr class="w-25">
                 <div class="one">
@@ -251,35 +263,35 @@
                 </div>
 
                 <div class="selectors mb-3 mx-2 mt-5">
-    <button type="button" class="btn btn-light text-secondary ">For You</button>
-    <button type="button" class="btn btn-light text-secondary ">Follow</button>  
-    <button type="button" class="btn btn-light text-secondary ">Newsletter</button>
-    <button type="button" class="btn btn-light text-secondary ">Healt</button>
-    <button type="button" class="btn btn-light text-secondary ">Machine Learning</button>
-    <button type="button" class="btn btn-light text-secondary ">Startup</button>
-    <button type="button" class="btn btn-light text-secondary ">Data Science</button>
-    <button type="button" class="btn btn-light text-secondary ">JavaScript</button>
-    <button type="button" class="btn btn-light text-secondary ">Jobs</button>  
-    <button type="button" class="btn btn-light text-secondary ">Software Development</button>
-    <button type="button" class="btn btn-light text-secondary ">Design</button>
-    <button type="button" class="btn btn-light text-secondary ">Technology</button>
-    <button type="button" class="btn btn-light text-secondary ">Productivity</button>
-    <button type="button" class="btn btn-light text-secondary ">Sort Readings</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">For You</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Follow</button>  
+    <button type="button" class="btn btn-light text-secondary mb-2">Newsletter</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Healt</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Machine Learning</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Startup</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Data Science</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">JavaScript</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Jobs</button>  
+    <button type="button" class="btn btn-light text-secondary mb-2">Software Development</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Design</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Technology</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Productivity</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Sort Readings</button>
 
 
 
- </div>
+</div>
 
 
-             </div>
+  </div>
 
 
 
 
 
     
+           </div>   
            </div>
-        </div>
 
 
 
@@ -287,20 +299,20 @@
     </div>
  </section>
  <div class="selectors mb-3 mx-2">
-    <button type="button" class="btn btn-light text-secondary ">For You</button>
-    <button type="button" class="btn btn-light text-secondary ">Follow</button>  
-    <button type="button" class="btn btn-light text-secondary ">Newsletter</button>
-    <button type="button" class="btn btn-light text-secondary ">Healt</button>
-    <button type="button" class="btn btn-light text-secondary ">Machine Learning</button>
-    <button type="button" class="btn btn-light text-secondary ">Startup</button>
-    <button type="button" class="btn btn-light text-secondary ">Data Science</button>
-    <button type="button" class="btn btn-light text-secondary ">JavaScript</button>
-    <button type="button" class="btn btn-light text-secondary ">Jobs</button>  
-    <button type="button" class="btn btn-light text-secondary ">Software Development</button>
-    <button type="button" class="btn btn-light text-secondary ">Design</button>
-    <button type="button" class="btn btn-light text-secondary ">Technology</button>
-    <button type="button" class="btn btn-light text-secondary ">Productivity</button>
-    <button type="button" class="btn btn-light text-secondary ">Sort Readings</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">For You</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Follow</button>  
+    <button type="button" class="btn btn-light text-secondary mb-2">Newsletter</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Healt</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Machine Learning</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Startup</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Data Science</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">JavaScript</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Jobs</button>  
+    <button type="button" class="btn btn-light text-secondary mb-2">Software Development</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Design</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Technology</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Productivity</button>
+    <button type="button" class="btn btn-light text-secondary mb-2">Sort Readings</button>
 
 
 
@@ -488,7 +500,7 @@
 <!-- Footer -->
 
 
-<script src="/signup.js"></script>
+<script src="/userScript.js"></script>
 
 </body>
 </html>
